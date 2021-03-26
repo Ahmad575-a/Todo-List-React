@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# TODO-LIST
+in this react app you can add , edit and delete items and sure you will get alerted too when you make an action example deleting 
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
