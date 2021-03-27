@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import List from './components/List';
 import Alert from './components/alert'
+import './App.css'
 
 const getLocalStorage = () => {
   let list = localStorage.getItem('list');
@@ -63,27 +64,28 @@ function App() {
     localStorage.setItem('list', JSON.stringify(list));
   }, [list]);
   return (
-    <section >
-      <form  onSubmit={handleSubmit}>
+    <section className='section-center' >
+      <form className='todo-form' onSubmit={handleSubmit}>
         {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
 
         <h3>TODO-LIST</h3>
         <div className='form-control'>
           <input
             type='text'
+            className='todo'
             placeholder='write an item to add it here'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <button type='submit' >
+          <button type='submit' className='submit-btn'>
             {isEditing ? 'edit' : 'submit'}
           </button>
         </div>
       </form>
       {list.length > 0 && (
-        <div >
+        <div className='todo-container'>
           <List items={list} removeItem={removeItem} editItem={editItem} />
-          <button onClick={clearList}>
+          <button className='clear-btn' onClick={clearList}>
             clear items
           </button>
         </div>
